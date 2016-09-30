@@ -21,7 +21,8 @@ namespace AspNetCoreApp.Controllers
         [HttpGet]
         public IEnumerable<Product> GetProducts()
         {
-            return this.repository.GetAll();
+            var products = this.repository.GetAll().ToList();
+            return products;
         }
     }
 }

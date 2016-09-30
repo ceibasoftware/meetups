@@ -1,1 +1,5 @@
-#:D:\projects\samples\AspNetCoreApp\src\AspNetCoreApp\AspNetCoreApp.xproj
+#:D:\projects\git\ceiba\meetups\AspNetCoreApp\src\WebApiCore\WebApiCore.xproj
+#:D:\projects\git\ceiba\meetups\AspNetCoreApp\AspNetCoreAppMicroservice\AspNetCoreAppMicroservice.sfproj
+D:\projects\git\ceiba\meetups\AspNetCoreApp\AspNetCoreAppMicroservice\AspNetCoreAppMicroservice.sfproj|D:\projects\git\ceiba\meetups\AspNetCoreApp\src\WebApi\WebApi.xproj
+D:\projects\git\ceiba\meetups\AspNetCoreApp\AspNetCoreAppMicroservice\AspNetCoreAppMicroservice.sfproj|D:\projects\git\ceiba\meetups\AspNetCoreApp\src\AspNetCoreApp\AspNetCoreApp.xproj
+D:\projects\git\ceiba\meetups\AspNetCoreApp\AspNetCoreAppMicroservice\AspNetCoreAppMicroservice.sfproj|D:\projects\git\ceiba\meetups\AspNetCoreApp\src\WebApiCore\WebApiCore.xproj
