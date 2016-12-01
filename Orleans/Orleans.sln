@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ceiba.OrleansStart.Hosting", "Ceiba.OrleansStart.Hosting\Ceiba.OrleansStart.Hosting.csproj", "{216C9D22-F747-40BA-A836-4A00A8D04FA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ceiba.OrleansStart.Core", "Ceiba.OrleansStart.Core\Ceiba.OrleansStart.Core.csproj", "{692C5F7D-7264-46B0-B88A-3082CFA5FD05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ceiba.OrleansStart.Comms", "Ceiba.OrleansStart.Comms\Ceiba.OrleansStart.Comms.csproj", "{338220F4-5F49-42AE-BC68-29BDA7C1524C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ceiba.OrleansStart.DesktopClient", "Ceiba.OrleansStart.DesktopClient\Ceiba.OrleansStart.DesktopClient.csproj", "{2B9F330B-0270-4E22-A899-8B4F5928550D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{216C9D22-F747-40BA-A836-4A00A8D04FA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{216C9D22-F747-40BA-A836-4A00A8D04FA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{216C9D22-F747-40BA-A836-4A00A8D04FA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{216C9D22-F747-40BA-A836-4A00A8D04FA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{692C5F7D-7264-46B0-B88A-3082CFA5FD05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{692C5F7D-7264-46B0-B88A-3082CFA5FD05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{692C5F7D-7264-46B0-B88A-3082CFA5FD05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{692C5F7D-7264-46B0-B88A-3082CFA5FD05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{338220F4-5F49-42AE-BC68-29BDA7C1524C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{338220F4-5F49-42AE-BC68-29BDA7C1524C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{338220F4-5F49-42AE-BC68-29BDA7C1524C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{338220F4-5F49-42AE-BC68-29BDA7C1524C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B9F330B-0270-4E22-A899-8B4F5928550D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B9F330B-0270-4E22-A899-8B4F5928550D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B9F330B-0270-4E22-A899-8B4F5928550D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B9F330B-0270-4E22-A899-8B4F5928550D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

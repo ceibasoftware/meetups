@@ -1,0 +1,77 @@
+﻿<Window x:Class="Ceiba.OrleansStart.DesktopClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ceiba.OrleansStart.DesktopClient"
+        mc:Ignorable="d"
+        Title="DevFest: Microsoft Orleans" 
+        Height="600" 
+        Width="800" 
+        ResizeMode="NoResize" 
+        Unloaded="Window_Unloaded"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <local:MainViewModel x:Name="viewModel" />
+    </Window.DataContext>
+    
+    <DockPanel LastChildFill="True" Margin="5,10,0,0">
+
+        <StackPanel DockPanel.Dock="Top" Margin="5,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Enter company name or part: " />
+                <TextBox Name="companyLookup" Grid.Column="1" Margin="8,0" Width="350" Text="{Binding CompanyLookup, Mode=TwoWay}" />
+                <Button Name="lookup" Command="{Binding LookupCommand}" Content="Lookup" Grid.Column="2" Margin="8,0" />
+
+                <DataGrid 
+                    Name="companiesView" 
+                    AutoGenerateColumns="False"
+                    CanUserAddRows="False"
+                    CanUserDeleteRows="False"
+                    CanUserReorderColumns="False"
+                    Grid.ColumnSpan="3" 
+                    Grid.Row="1" 
+                    ItemsSource="{Binding Companies}"
+                    Margin="0,10,0,0" 
+                    SelectedItem="{Binding SelectedCompany, Mode=TwoWay}"
+                    SelectionMode="Single"
+                    Visibility="{Binding AvailableCompanies, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Company Name" Binding="{Binding Name}" />
+                        <DataGridTextColumn Header="Company Symbol" Binding="{Binding Symbol}" />
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button 
+                                        Name="followButton" 
+                                        Command="{Binding Path=DataContext.FollowCompanyCommand, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Window}}}" 
+                                        Content="Follow" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                          
+            </Grid>
+        </StackPanel>
+        
+        <StatusBar DockPanel.Dock="Bottom" Height="33" Width="764">
+            <TextBlock x:Name="userId" HorizontalAlignment="Left" Text="{Binding CurrentUser}" />
+            <TextBlock x:Name="updateTime" HorizontalAlignment="Right" />
+        </StatusBar>
+
+        <ListView x:Name="stocksView" ItemsSource="{Binding Items}" ItemTemplate="{StaticResource StocksTemplate}" Margin="0,10,5,0" />
+    </DockPanel>
+</Window>

@@ -1,0 +1,65 @@
+﻿<Application x:Class="Ceiba.OrleansStart.DesktopClient.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Ceiba.OrleansStart.DesktopClient"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <local:ChangeToColorConverter x:Key="ChangeToColorConverter" />
+        <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        
+        <Style x:Key="CompanyNameStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Roboto Condensed" />
+            <Setter Property="FontSize" Value="32" />
+        </Style>
+
+        <Style x:Key="CompanySymbolStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Roboto Light" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+
+        <Style x:Key="ChangeStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Roboto" />
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="Foreground" Value="{Binding Quota.Change, Converter={StaticResource ChangeToColorConverter}}" />
+        </Style>
+
+        <Style x:Key="PriceStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Roboto Black" />
+            <Setter Property="FontSize" Value="26" />
+        </Style>
+
+        <DataTemplate x:Key="StocksTemplate">
+            <Grid Margin="20,0,0,20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Style="{StaticResource CompanyNameStyle}" Content="{Binding Path=Quota.Company}" />
+                        <Label Grid.Column="1" Style="{StaticResource CompanySymbolStyle}" Content="{Binding Path=Symbol}" ContentStringFormat="{}({0})" />
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Label Style="{StaticResource PriceStyle}" Content="{Binding Path=Quota.Price, Mode=TwoWay}" ContentStringFormat="{}{0:C2}" />
+                        <Label Grid.Row="1" Style="{StaticResource ChangeStyle}" Content="{Binding Path=Quota.Change, Mode=TwoWay}" ContentStringFormat="{}{0:N2}" />
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Application.Resources>
+</Application>
